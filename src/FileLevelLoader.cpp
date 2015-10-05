@@ -49,9 +49,9 @@
 USING_NS_PEGCORE;
 
 // Constants/Enums/Typedefs //
-const char FileLevelLoader::kCharPeg     = 'o';   
-const char FileLevelLoader::kCharHole    = '.';    
-const char FileLevelLoader::kCharBlocked = 'x';       
+const char FileLevelLoader::kCharPeg     = 'o';
+const char FileLevelLoader::kCharHole    = '.';
+const char FileLevelLoader::kCharBlocked = 'x';
 
 // CTOR/DTOR //
 FileLevelLoader::FileLevelLoader(const std::string &filename) :
@@ -63,20 +63,20 @@ FileLevelLoader::FileLevelLoader(const std::string &filename) :
     for(std::string line; std::getline(infile, line); /*None*/ )
     {
         //Create a row of pegs...
-        m_board.push_back(std::vector<PegType>());        
+        m_board.push_back(std::vector<PegType>());
         for(auto &ch : line)
         {
             //Peg.
             if(ch == FileLevelLoader::kCharPeg)
             {
                 m_board[currCoord.y].push_back(PegType::Peg);
-                m_pegCoords.push_back(currCoord);       
+                m_pegCoords.push_back(currCoord);
             }
             //Hole.
             else if(ch == FileLevelLoader::kCharHole)
             {
                 m_board[currCoord.y].push_back(PegType::Hole);
-                m_holeCoords.push_back(currCoord);          
+                m_holeCoords.push_back(currCoord);
             }
             //Blocked.
             else if(ch == FileLevelLoader::kCharBlocked)
@@ -104,20 +104,20 @@ FileLevelLoader::~FileLevelLoader()
 
 // Overriden Methods //
 const Board& FileLevelLoader::getBoard() const
-{    
+{
     return m_board;
 }
 
-int FileLevelLoader::getPegsCount() const 
+int FileLevelLoader::getPegsCount() const
 {
     return static_cast<int>(m_pegCoords.size());
 }
 
-const CoordVec& FileLevelLoader::getPegCoords() const 
+const CoordVec& FileLevelLoader::getPegCoords() const
 {
     return m_pegCoords;
 }
-const CoordVec& FileLevelLoader::getHoleCoords() const 
+const CoordVec& FileLevelLoader::getHoleCoords() const
 {
     return m_holeCoords;
 }

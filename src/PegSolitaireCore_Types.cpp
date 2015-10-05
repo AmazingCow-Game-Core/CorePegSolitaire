@@ -51,7 +51,7 @@ std::ostream& PegCore::operator <<(std::ostream &os, Status status)
     os << ((status == Status::Continue) ? "Status::Continue" :
            (status == Status::Defeat  ) ? "Status::Defeat"   :
                                           "Status::Victory");
-    
+
     return os;
 }
 std::ostream& PegCore::operator <<(std::ostream &os, PegType type)
@@ -77,7 +77,7 @@ bool PegCore::operator !=(const Coord &lhs, const Coord rhs)
 }
 
 // CTOR/DTOR //
-Coord::Coord(int _y /* = 0 */, int _x /* = 0 */) : 
+Coord::Coord(int _y /* = 0 */, int _x /* = 0 */) :
     y(_y),
     x(_x)
 {
