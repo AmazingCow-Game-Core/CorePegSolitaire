@@ -75,6 +75,7 @@ class Coord
 {
     // Friends //
 public:
+    friend std::ostream& operator <<(std::ostream &os, const Coord &coord);
     friend bool operator ==(const Coord &lhs, const Coord rhs);
     friend bool operator !=(const Coord &lhs, const Coord rhs);
     

@@ -67,6 +67,11 @@ std::ostream& PegCore::operator <<(std::ostream &os, PegType type)
 // Classes //
 
 // Friends //
+std::ostream& PegCore::operator <<(std::ostream &os, const Coord &coord)
+{
+    os << "(" << coord.y << "," << coord.x << ")";
+    return os;
+}
 bool PegCore::operator ==(const Coord &lhs, const Coord rhs)
 {
     return (lhs.y == rhs.y) && (lhs.x == rhs.x);
