@@ -76,7 +76,7 @@ bool GameCore::makeMove(const Coord &sourceCoord, const Coord &targetCoord)
     setPegAt(sourceCoord, PegType::Hole);
     setPegAt(middleCoord, PegType::Hole);
     setPegAt(targetCoord, PegType::Peg);
-    
+
     //Update the coords vectors.
     //First update the Pegs Coords Vector.
     m_pegCoords.erase(std::find(begin(m_pegCoords), end(m_pegCoords), sourceCoord));
@@ -86,7 +86,7 @@ bool GameCore::makeMove(const Coord &sourceCoord, const Coord &targetCoord)
     m_holeCoords.erase(std::find(begin(m_holeCoords), end(m_holeCoords), targetCoord));
     m_holeCoords.push_back(sourceCoord);
     m_holeCoords.push_back(middleCoord);
-    
+
     //Increment the moves.
     ++m_movesCount;
 
@@ -125,13 +125,13 @@ CoordVec GameCore::getMovesForPeg(const Coord &coord) const
     //Coord isn't valid there's no moves.
     if(!isValidCoord(coord))
         return CoordVec();
-    
+
     //If coord isn't a peg there's no moves.
     if(getPegAt(coord) != PegType::Peg)
         return CoordVec();
-    
+
     //Create the vector possible moves.
-    auto possibleMoves = CoordVec(); 
+    auto possibleMoves = CoordVec();
     possibleMoves.reserve(4); //4 is the max moves for a peg.
 
     //Get the orthogonal coords.
@@ -142,22 +142,24 @@ CoordVec GameCore::getMovesForPeg(const Coord &coord) const
     auto coordDown  = coord.getDown (1);
     auto coordLeft  = coord.getLeft (1);
     auto coordRight = coord.getRight(1);
-    
+
     //This macro is a short hand for check if a move is valid or not based
     //on the Peg's coord. Since all logic is equal, only changing is the
     //method's name that will be called, I think that's a good use for a macro.
+    //See (A Arte de Escrever Programs Legiveis - ISBN 978-85-7522-294-2)
+    //Chapter 8, pag 105 for more :)
 #define __CHECK_MOVE__(_dir_)                              \
     if(getPegAt(coord##_dir_) == PegType::Peg &&           \
     getPegAt(coord##_dir_.get##_dir_(1)) == PegType::Hole) \
 {                                                          \
     possibleMoves.push_back(coord##_dir_.get##_dir_(1));   \
 }
-    
+
     __CHECK_MOVE__(Up);
     __CHECK_MOVE__(Down);
     __CHECK_MOVE__(Left);
     __CHECK_MOVE__(Right);
-    
+
 //We don't want it polluting...
 #undef __CHECK_MOVE__
 
@@ -178,7 +180,9 @@ const CoordVec& GameCore::getBlockedCoords() const
 
 bool GameCore::isValidCoord(const Coord &coord) const
 {
-    return (coord.y >= 0 && coord.y < m_board.size()) 
+    //Here we set that a coord is valid if it's inside the
+    //board bounds. This doesn't means that we can move it.
+    return (coord.y >= 0 && coord.y < m_board.size())
         && (coord.x >= 0 && coord.x < m_board[coord.y].size());
 }
 bool GameCore::isValidMove(const Coord &sourceCoord,
@@ -192,7 +196,7 @@ bool GameCore::isValidMove(const Coord &sourceCoord,
     if(!isValidCoord(sourceCoord) || !isValidCoord(targetCoord))
         return false;
 
-    //Check if the first one is a Peg and 
+    //Check if the first one is a Peg and
     //the second one is a hole.
     auto sourcePeg = getPegAt(sourceCoord);
     auto targetPeg = getPegAt(targetCoord);
@@ -205,7 +209,7 @@ bool GameCore::isValidMove(const Coord &sourceCoord,
     auto it = std::find(begin(possibleMoves), end(possibleMoves), targetCoord);
     if(it == end(possibleMoves))
         return false;
-    
+
     return true;
 }
 
