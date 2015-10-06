@@ -51,4 +51,11 @@
 #define NS_PEGCORE_END   }
 #define USING_NS_PEGCORE using namespace PegCore
 
+//The core version number.
+#define COW_PEGCORE_VERSION_MAJOR    "0"
+#define COW_PEGCORE_VERSION_MINOR    "1"
+#define COW_PEGCORE_VERSION_REVISION "0"
+
+#define COW_PEGCORE_VERSION "0.1.0"
+
 #endif // defined(__PegSolitaireCore_include_PegSolitaireCore_Utils_h__) //
