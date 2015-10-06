@@ -61,17 +61,51 @@ public:
 
     // CTOR/DTOR //
 public:
+    ///@brief Loads a board from a disk file.
+    ///Using the FileLevelLoader::kCharPeg,
+    ///FileLevelLoader::kCharHole and 
+    ///FileLevelLoader::kCharPeg as the chars that
+    ///represents the Board elements.
+    ///@param filename The fullpath of the Board file.
     FileLevelLoader(const std::string &filename);
+
+    ///@brief A virtual Destructor.
     virtual ~FileLevelLoader();
+
 
     // Overriden Methods //
 public:
+    ///@brief Gets the Board from loaded file.
+    //@returns The loaded Board.
+    //@see Board.
     const Board& getBoard() const override;
     
+
+    ///@brief Gets how many Pegs (PegType::Peg) this board has.
+    ///@returns The pegs count.
+    ///@see PegType.
     int getPegsCount() const override;
     
-    const CoordVec& getPegCoords()     const override;
-    const CoordVec& getHoleCoords()    const override;
+
+    ///@brief Get all the coords that has a Peg (PegType::Peg) in this board.
+    ///@returns A Coord vector with all coords that are Pegs.
+    ///@see Coord.
+    ///@see CoordVec.
+    ///@see PegType.
+    const CoordVec& getPegCoords() const override;
+
+    ///@brief Get all the coords that has a Hole (PegType::Hole) in this board.
+    ///@returns A Coord vector with all coords that are Holes.
+    ///@see Coord.
+    ///@see CoordVec.
+    ///@see PegType.
+    const CoordVec& getHoleCoords() const override;
+
+    ///@brief Get all the coords that is blocked (PegType::Blocked) in this board.
+    ///@returns A Coord vector with all coords that are blocked.
+    ///@see Coord.
+    ///@see CoordVec.
+    ///@see PegType.
     const CoordVec& getBlockedCoords() const override;
 
     // iVars //

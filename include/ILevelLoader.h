@@ -52,18 +52,44 @@ class ILevelLoader
 {
     // CTOR/DTOR //
 public:
-    ILevelLoader()          { /* Empty */ }
+    ///@brief CTOR for ILevelLoader.
+    ILevelLoader() { /* Empty */ }
+
+    ///@brief Virtual DTOR for ILevelLoader.
     virtual ~ILevelLoader() { /* Empty */ }
+
 
     // Public Methods //
 public:
+    ///@brief All subclasses must override this and return 
+    ///the complete board representation.
+    ///@returns The board loaded.
+    ///@see Board.
     virtual const Board& getBoard() const = 0;
     
+    ///@brief All subclasses must override this and return 
+    ///how many pegs the board has.
+    ///@returns How many pegs the board loaded has.
     virtual int getPegsCount() const = 0;
+
     
-    virtual const CoordVec& getPegCoords()     const = 0;
-    virtual const CoordVec& getHoleCoords()    const = 0;
-    virtual const CoordVec& getBlockedCoords() const = 0;
+    ///@brief All subclasses must override this and return 
+    ///all coords that represents a Peg (PegType::Peg).
+    ///@returns The coords vector with all coords that are Pegs.
+    ///@see Coord, CoordVec, PegType.
+    virtual const CoordVec& getPegCoords() const = 0;
+
+    ///@brief All subclasses must override this and return 
+    ///all coords that represents a Hole (PegType::Hole).
+    ///@returns The coords vector with all coords that are Holes.
+    ///@see Coord, CoordVec, PegType.
+    virtual const CoordVec& getHoleCoords() const = 0;
+
+    ///@brief All subclasses must override this and return 
+    ///all coords that represents a Blocked (PegType::Blocked).
+    ///@returns The coords vector with all coords that are Blocked.
+    ///@see Coord, CoordVec, PegType.
+    virtual const CoordVec& getBlockedCoords() const = 0;    
 };
 
 NS_PEGCORE_END

@@ -59,10 +59,7 @@ GameCore::GameCore(const ILevelLoader &loader) :
 {
 
 }
-GameCore::~GameCore()
-{
-    //Empty...
-}
+
 
 // Public Methods //
 bool GameCore::makeMove(const Coord &sourceCoord, const Coord &targetCoord)

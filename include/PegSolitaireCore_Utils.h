@@ -42,6 +42,11 @@
 #ifndef __PegSolitaireCore_include_PegSolitaireCore_Utils_h__
 #define __PegSolitaireCore_include_PegSolitaireCore_Utils_h__
 
+//All classes of this core is placed inside this namespace.
+//We use MACROS so is easier to change if needed. 
+//Is (in our opinion) more explicit. 
+//And finally the editors will not reformat the code.
+
 #define NS_PEGCORE_BEGIN namespace PegCore {
 #define NS_PEGCORE_END   }
 #define USING_NS_PEGCORE using namespace PegCore

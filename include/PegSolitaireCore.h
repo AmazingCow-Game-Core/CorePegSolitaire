@@ -42,6 +42,11 @@
 #ifndef __PegSolitaireCore_include_PegSolitaireCore_h__
 #define __PegSolitaireCore_include_PegSolitaireCore_h__
 
+//This is a umbrella header indented to ease the inclusion of all files
+//needed to use the PegSolitaire Game Core.
+//While is possible to include each one separately is very easy just to include 
+//this file alone and let it makes all the job. :)
+
 #include "PegSolitaireCore_Utils.h"
 #include "PegSolitaireCore_Types.h"
 #include "GameCore.h"
