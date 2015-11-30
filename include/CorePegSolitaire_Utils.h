@@ -3,8 +3,8 @@
 //               ████████                                                     //
 //             ██        ██                                                   //
 //            ███  █  █  ███                                                  //
-//            █ █        █ █        PegSolitaireCore_Utils.h                  //
-//             ████████████         Peg Solitaire Core                        //
+//            █ █        █ █        CorePegSolitaire_Utils.h                  //
+//             ████████████         CorePegSolitaire                          //
 //           █              █       Copyright (c) 2015 AmazingCow             //
 //          █     █    █     █      www.AmazingCow.com                        //
 //          █     █    █     █                                                //
@@ -47,15 +47,15 @@
 //Is (in our opinion) more explicit. 
 //And finally the editors will not reformat the code.
 
-#define NS_PEGCORE_BEGIN namespace PegCore {
-#define NS_PEGCORE_END   }
-#define USING_NS_PEGCORE using namespace PegCore
+#define NS_COREPEG_BEGIN namespace CorePeg {
+#define NS_COREPEG_END   }
+#define USING_NS_COREPEG using namespace CorePeg
 
 //The core version number.
-#define COW_PEGCORE_VERSION_MAJOR    "0"
-#define COW_PEGCORE_VERSION_MINOR    "1"
-#define COW_PEGCORE_VERSION_REVISION "0"
+#define COW_COREPEG_VERSION_MAJOR    "0"
+#define COW_COREPEG_VERSION_MINOR    "2"
+#define COW_COREPEG_VERSION_REVISION "0"
 
-#define COW_PEGCORE_VERSION "0.1.0"
+#define COW_COREPEG_VERSION "0.2.0"
 
 #endif // defined(__PegSolitaireCore_include_PegSolitaireCore_Utils_h__) //

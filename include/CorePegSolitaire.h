@@ -3,8 +3,8 @@
 //               ████████                                                     //
 //             ██        ██                                                   //
 //            ███  █  █  ███                                                  //
-//            █ █        █ █        PegSolitaireCore.h                        //
-//             ████████████         Peg Solitaire Core                        //
+//            █ █        █ █        CorePegSolitaire.h                        //
+//             ████████████         CorePegSolitaire                          //
 //           █              █       Copyright (c) 2015 AmazingCow             //
 //          █     █    █     █      www.AmazingCow.com                        //
 //          █     █    █     █                                                //
@@ -47,10 +47,9 @@
 //While is possible to include each one separately is very easy just to include 
 //this file alone and let it makes all the job. :)
 
-#include "PegSolitaireCore_Utils.h"
-#include "PegSolitaireCore_Types.h"
-#include "GameCore.h"
-#include "ILevelLoader.h"
+#include "CorePegSolitaire_Types.h"
+#include "CorePegSolitaire_Utils.h"
 #include "FileLevelLoader.h"
+#include "ILevelLoader.h"
 
 #endif // defined(__PegSolitaireCore_include_PegSolitaireCore_h__) //

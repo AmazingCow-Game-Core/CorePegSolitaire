@@ -3,8 +3,8 @@
 //               ████████                                                     //
 //             ██        ██                                                   //
 //            ███  █  █  ███                                                  //
-//            █ █        █ █        PegSolitaireCore_Types.h                  //
-//             ████████████         Peg Solitaire Core                        //
+//            █ █        █ █        CorePegSolitaire_Types.h                  //
+//             ████████████         CorePegSolitaire                        //
 //           █              █       Copyright (c) 2015 AmazingCow             //
 //          █     █    █     █      www.AmazingCow.com                        //
 //          █     █    █     █                                                //
@@ -46,10 +46,10 @@
 #include <vector>
 #include <ostream>
 
-//PegSolitaireCore
-#include "PegSolitaireCore_Utils.h"
+//CorePegSolitaire
+#include "CorePegSolitaire_Utils.h"
 
-NS_PEGCORE_BEGIN
+NS_COREPEG_BEGIN
 
 // Enums //
 
@@ -85,77 +85,10 @@ enum class PegType
 ///@see Status.
 std::ostream& operator <<(std::ostream &os, PegType type);
 
-
-
-// Classes //
-class Coord
-{
-    // Friends //
-public:
-    ///@brief Output a string representation in for of (y, x).
-    friend std::ostream& operator <<(std::ostream &os, const Coord &coord);
-
-    ///@brief Check if two coords have the same y and x.
-    friend bool operator ==(const Coord &lhs, const Coord rhs);
-
-    ///@brief Check if two coords have the different y and x.
-    friend bool operator !=(const Coord &lhs, const Coord rhs);
-    
-
-    // CTOR/DTOR //
-public:
-    ///@brief Constructs a Coord.
-    ///@param y The Y coordinate - Default is 0.
-    ///@param x The X coordinate - Default is 0.
-    Coord(int y = 0, int x = 0);
-
-
-    // Public Methods //
-public:
-    ///@brief Gets a Coord that is top of this coord.
-    ///@param offset How many times it will be on top.
-    ///@returns A coord that have the y coordinate "offset" times less 
-    ///than this coord.
-    Coord getUp(int offset) const;
-
-    ///@brief Gets a Coord that is bottom of this coord.
-    ///@param offset How many times it will be on bottom.
-    ///@returns A coord that have the y coordinate "offset" times more
-    ///than this coord.
-    Coord getDown(int offset) const;
-
-    ///@brief Gets a Coord that is on left of this coord.
-    ///@param offset How many times it will be on left.
-    ///@returns A coord that have the x coordinate "offset" times less
-    ///than this coord.
-    Coord getLeft(int offset) const;
-
-    ///@brief Gets a Coord that is on right of this coord.
-    ///@param offset How many times it will be on right.
-    ///@returns A coord that have the x coordinate "offset" times more
-    ///than this coord.
-    Coord getRight(int offset) const;
-    
-    ///@brief Gets the Coord that is on middle of two coord.
-    ///@param otherCoord The second coord that will be calculated.
-    ///@returns A coord that is on the middle of these coord.    
-    Coord getMiddleCoord(const Coord &otherCoord) const;
-    
-    // iVars //
-public:
-    int x, y;
-};
-
-
-// Typedefs //
-///@brief Typedef to ease the typing of "a vector of Coords".
-///@see Coord
-typedef std::vector<Coord> CoordVec;
-
 ///@brief Typedef to ease the typing of "a matrix of PegTypes".
 ///@see PegType
 typedef std::vector<std::vector<PegType>> Board;
 
 
-NS_PEGCORE_END
+NS_COREPEG_END
 #endif // defined(__PegSolitaireCore_include_PegSolitaireCore_Types_h__) //

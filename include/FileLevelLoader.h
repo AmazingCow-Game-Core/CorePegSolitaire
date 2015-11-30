@@ -4,7 +4,7 @@
 //             ██        ██                                                   //
 //            ███  █  █  ███                                                  //
 //            █ █        █ █        FileLevelLoader.h                         //
-//             ████████████         Peg Solitaire Core                        //
+//             ████████████         CorePegSolitaire                          //
 //           █              █       Copyright (c) 2015 AmazingCow             //
 //          █     █    █     █      www.AmazingCow.com                        //
 //          █     █    █     █                                                //
@@ -44,12 +44,12 @@
 
 //std
 #include <string>
-//PegSolitaireCore
-#include "PegSolitaireCore_Utils.h"
-#include "PegSolitaireCore_Types.h"
+//CorePegSolitaire
+#include "CorePegSolitaire_Utils.h"
+#include "CorePegSolitaire_Types.h"
 #include "ILevelLoader.h"
 
-NS_PEGCORE_BEGIN
+NS_COREPEG_BEGIN
 
 class FileLevelLoader : public ILevelLoader
 {
@@ -118,5 +118,5 @@ private:
     CoordVec m_blockedCoords;
 };
 
-NS_PEGCORE_END
+NS_COREPEG_END
 #endif // defined(__PegSolitaireCore_include_FileLevelLoader_h__) //

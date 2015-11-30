@@ -4,7 +4,7 @@
 //             ██        ██                                                   //
 //            ███  █  █  ███                                                  //
 //            █ █        █ █        ILevelLoader.h                            //
-//             ████████████         Peg Solitaire Core                        //
+//             ████████████         CorePegSolitaire                          //
 //           █              █       Copyright (c) 2015 AmazingCow             //
 //          █     █    █     █      www.AmazingCow.com                        //
 //          █     █    █     █                                                //
@@ -42,9 +42,9 @@
 #ifndef __PegSolitaireCore_include_ILevelLoader_h__
 #define __PegSolitaireCore_include_ILevelLoader_h__
 
-//PegSolitaireCore
-#include "PegSolitaireCore_Utils.h"
-#include "PegSolitaireCore_Types.h"
+//CorePegSolitaire
+#include "CorePegSolitaire_Utils.h"
+#include "CorePegSolitaire_Types.h"
 
 NS_PEGCORE_BEGIN
 
@@ -92,5 +92,5 @@ public:
     virtual const CoordVec& getBlockedCoords() const = 0;    
 };
 
-NS_PEGCORE_END
+NS_COREPEG_END
 #endif // defined(__PegSolitaireCore_include_ILevelLoader_h__) //

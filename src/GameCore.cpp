@@ -4,7 +4,7 @@
 //             ██        ██                                                   //
 //            ███  █  █  ███                                                  //
 //            █ █        █ █        GameCore.cpp                              //
-//             ████████████         Peg Solitaire Core                        //
+//             ████████████         CorePegSolitaire                          //
 //           █              █       Copyright (c) 2015 AmazingCow             //
 //          █     █    █     █      www.AmazingCow.com                        //
 //          █     █    █     █                                                //
@@ -46,7 +46,7 @@
 #include <sstream>
 
 //Usings
-USING_NS_PEGCORE;
+USING_NS_COREPEG;
 
 // CTOR/DTOR //
 GameCore::GameCore(const ILevelLoader &loader) :

@@ -3,8 +3,8 @@
 //               ████████                                                     //
 //             ██        ██                                                   //
 //            ███  █  █  ███                                                  //
-//            █ █        █ █        PegSolitaireCore_Types.cpp                //
-//             ████████████         Peg Solitaire Core                        //
+//            █ █        █ █        CorePegSolitaire_Types.cpp                //
+//             ████████████         CorePegSolitaire                          //
 //           █              █       Copyright (c) 2015 AmazingCow             //
 //          █     █    █     █      www.AmazingCow.com                        //
 //          █     █    █     █                                                //
@@ -40,13 +40,14 @@
 //----------------------------------------------------------------------------//
 
 //Header
-#include "../include/PegSolitaireCore_Types.h"
+#include "../include/CorePegSolitaire_Types.h"
 
 //Usings
-USING_NS_PEGCORE;
+USING_NS_COREPEG;
 
 // Enums //
-std::ostream& PegCore::operator <<(std::ostream &os, Status status)
+NS_COREPEG_BEGIN
+std::ostream& operator <<(std::ostream &os, Status status)
 {
     os << ((status == Status::Continue) ? "Status::Continue" :
            (status == Status::Defeat  ) ? "Status::Defeat"   :
@@ -54,7 +55,7 @@ std::ostream& PegCore::operator <<(std::ostream &os, Status status)
 
     return os;
 }
-std::ostream& PegCore::operator <<(std::ostream &os, PegType type)
+std::ostream& operator <<(std::ostream &os, PegType type)
 {
     os << ((type == PegType::Peg    ) ? "PegType::Peg"     :
            (type == PegType::Hole   ) ? "PegType::Hole"    :
@@ -62,53 +63,19 @@ std::ostream& PegCore::operator <<(std::ostream &os, PegType type)
                                         "PegType::Invalid");
     return os;
 }
-
-
-// Classes //
+NS_COREPEG_END
 
 // Friends //
-std::ostream& PegCore::operator <<(std::ostream &os, const Coord &coord)
+std::ostream& CorePeg::operator <<(std::ostream &os, const Coord &coord)
 {
     os << "(" << coord.y << "," << coord.x << ")";
     return os;
 }
-bool PegCore::operator ==(const Coord &lhs, const Coord rhs)
+bool CorePeg::operator ==(const Coord &lhs, const Coord rhs)
 {
     return (lhs.y == rhs.y) && (lhs.x == rhs.x);
 }
-bool PegCore::operator !=(const Coord &lhs, const Coord rhs)
+bool CorePeg::operator !=(const Coord &lhs, const Coord rhs)
 {
     return !(lhs == rhs);
-}
-
-// CTOR/DTOR //
-Coord::Coord(int _y /* = 0 */, int _x /* = 0 */) :
-    y(_y),
-    x(_x)
-{
-    //Empty...
-}
-
-// Static Methods //
-Coord Coord::getUp(int offset) const
-{
-    return Coord(this->y - offset, this->x);
-}
-Coord Coord::getDown(int offset) const
-{
-    return Coord(this->y + offset, this->x);
-}
-Coord Coord::getLeft(int offset) const
-{
-    return Coord(this->y, this->x - offset);
-}
-Coord Coord::getRight(int offset) const
-{
-    return Coord(this->y, this->x + offset);
-}
-
-Coord Coord::getMiddleCoord(const Coord &otherCoord) const
-{
-    return Coord((this->y + otherCoord.y) / 2,
-                 (this->x + otherCoord.x) / 2);
 }

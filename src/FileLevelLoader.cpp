@@ -4,7 +4,7 @@
 //             ██        ██                                                   //
 //            ███  █  █  ███                                                  //
 //            █ █        █ █        FileLevelLoader.cpp                       //
-//             ████████████         Peg Solitaire Core                        //
+//             ████████████         CorePegSolitaire                          //
 //           █              █       Copyright (c) 2015 AmazingCow             //
 //          █     █    █     █      www.AmazingCow.com                        //
 //          █     █    █     █                                                //
@@ -46,7 +46,7 @@
 #include <fstream>
 
 //Usings
-USING_NS_PEGCORE;
+USING_NS_COREPEG;
 
 // Constants/Enums/Typedefs //
 const char FileLevelLoader::kCharPeg     = 'o';

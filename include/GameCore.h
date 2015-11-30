@@ -4,7 +4,7 @@
 //             ██        ██                                                   //
 //            ███  █  █  ███                                                  //
 //            █ █        █ █        GameCore.h                                //
-//             ████████████         Peg Solitaire Core                        //
+//             ████████████         CorePegSolitaire                          //
 //           █              █       Copyright (c) 2015 AmazingCow             //
 //          █     █    █     █      www.AmazingCow.com                        //
 //          █     █    █     █                                                //
@@ -49,7 +49,7 @@
 #include "PegSolitaireCore_Types.h"
 #include "ILevelLoader.h"
 
-NS_PEGCORE_BEGIN
+NS_COREPEG_BEGIN
 
 class GameCore
 {
@@ -174,5 +174,5 @@ private:
     CoordVec m_blockedCoords;
 };
 
-NS_PEGCORE_END
+NS_COREPEG_END
 #endif // defined(__PegSolitaireCore_include_GameCore_h__) //
