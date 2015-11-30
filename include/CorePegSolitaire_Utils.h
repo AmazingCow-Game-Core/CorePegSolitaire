@@ -39,8 +39,8 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-#ifndef __PegSolitaireCore_include_PegSolitaireCore_Utils_h__
-#define __PegSolitaireCore_include_PegSolitaireCore_Utils_h__
+#ifndef __CorePegSolitaire_include_CorePegSolitaire_Utils_h__
+#define __CorePegSolitaire_include_CorePegSolitaire_Utils_h__
 
 //All classes of this core is placed inside this namespace.
 //We use MACROS so is easier to change if needed. 
@@ -58,4 +58,4 @@
 
 #define COW_COREPEG_VERSION "0.2.0"
 
-#endif // defined(__PegSolitaireCore_include_PegSolitaireCore_Utils_h__) //
+#endif // defined(__CorePegSolitaire_include_CorePegSolitaire_Utils_h__) //

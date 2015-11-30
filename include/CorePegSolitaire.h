@@ -39,8 +39,8 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-#ifndef __PegSolitaireCore_include_PegSolitaireCore_h__
-#define __PegSolitaireCore_include_PegSolitaireCore_h__
+#ifndef __CorePegSolitaire_include_CorePegSolitaire_h__
+#define __CorePegSolitaire_include_CorePegSolitaire_h__
 
 //This is a umbrella header indented to ease the inclusion of all files
 //needed to use the PegSolitaire Game Core.
@@ -53,4 +53,4 @@
 #include "ILevelLoader.h"
 #include "GameCore.h"
 
-#endif // defined(__PegSolitaireCore_include_PegSolitaireCore_h__) //
+#endif // defined(__CorePegSolitaire_include_CorePegSolitaire_h__) //

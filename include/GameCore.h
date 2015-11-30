@@ -39,8 +39,8 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-#ifndef __PegSolitaireCore_include_GameCore_h__
-#define __PegSolitaireCore_include_GameCore_h__
+#ifndef __CorePegSolitaire_include_GameCore_h__
+#define __CorePegSolitaire_include_GameCore_h__
 
 //std
 #include <string>
@@ -179,4 +179,4 @@ private:
 };
 
 NS_COREPEG_END
-#endif // defined(__PegSolitaireCore_include_GameCore_h__) //
+#endif // defined(__CorePegSolitaire_include_GameCore_h__) //

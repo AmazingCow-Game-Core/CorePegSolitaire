@@ -39,8 +39,8 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-#ifndef __PegSolitaireCore_include_ILevelLoader_h__
-#define __PegSolitaireCore_include_ILevelLoader_h__
+#ifndef __CorePegSolitaire_include_ILevelLoader_h__
+#define __CorePegSolitaire_include_ILevelLoader_h__
 
 //CorePegSolitaire
 #include "CorePegSolitaire_Utils.h"
@@ -79,21 +79,21 @@ public:
     ///@brief All subclasses must override this and return 
     ///all coords that represents a Peg (PegType::Peg).
     ///@returns The coords vector with all coords that are Pegs.
-    ///@see Coord, CoreCoord::Coord::Vec, PegType.
+    ///@see CoreCoord::Coord, CoreCoord::Coord::Vec, PegType.
     virtual const CoreCoord::Coord::Vec& getPegCoords() const = 0;
 
     ///@brief All subclasses must override this and return 
     ///all coords that represents a Hole (PegType::Hole).
     ///@returns The coords vector with all coords that are Holes.
-    ///@see Coord, CoreCoord::Coord::Vec, PegType.
+    ///@see CoreCoord::Coord, CoreCoord::Coord::Vec, PegType.
     virtual const CoreCoord::Coord::Vec& getHoleCoords() const = 0;
 
     ///@brief All subclasses must override this and return 
     ///all coords that represents a Blocked (PegType::Blocked).
     ///@returns The coords vector with all coords that are Blocked.
-    ///@see Coord, CoreCoord::Coord::Vec, PegType.
+    ///@see CoreCoord::Coord, CoreCoord::Coord::Vec, PegType.
     virtual const CoreCoord::Coord::Vec& getBlockedCoords() const = 0;    
 };
 
 NS_COREPEG_END
-#endif // defined(__PegSolitaireCore_include_ILevelLoader_h__) //
+#endif // defined(__CorePegSolitaire_include_ILevelLoader_h__) //

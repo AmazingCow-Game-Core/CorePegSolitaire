@@ -39,8 +39,8 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-#ifndef __PegSolitaireCore_include_PegSolitaireCore_Types_h__
-#define __PegSolitaireCore_include_PegSolitaireCore_Types_h__
+#ifndef __CorePegSolitaire_include_CorePegSolitaire_Types_h__
+#define __CorePegSolitaire_include_CorePegSolitaire_Types_h__
 
 //std
 #include <vector>
@@ -90,4 +90,4 @@ typedef std::vector<std::vector<PegType>> Board;
 
 
 NS_COREPEG_END
-#endif // defined(__PegSolitaireCore_include_PegSolitaireCore_Types_h__) //
+#endif // defined(__CorePegSolitaire_include_CorePegSolitaire_Types_h__) //
