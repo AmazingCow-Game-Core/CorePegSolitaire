@@ -44,10 +44,12 @@
 
 //std
 #include <string>
-//PegSolitaireCore
-#include "PegSolitaireCore_Utils.h"
-#include "PegSolitaireCore_Types.h"
+//CorePegSolitaire
+#include "CorePegSolitaire_Utils.h"
+#include "CorePegSolitaire_Types.h"
 #include "ILevelLoader.h"
+//CoreCoord
+#include "CoreCoord.h"
 
 NS_COREPEG_BEGIN
 
@@ -70,14 +72,15 @@ public:
     ///game status and the affected coords and pegs.
     ///After each call of makeMove the user should call the getStatus
     ///method to check if game is over.
-    ///@param sourceCoord Any coord, but if it isn't representing a peg 
-    ///(PegType::Peg) movement won't be valid.
-    ///@param targetCoord Any coord, but if it isn't representing a hole
-    ///(PegType::Hole) and if isn't in a range of valid movements 
+    ///@param sourceCoord Any CoreCoord::Coord, but if it isn't 
+    ///representing a peg (PegType::Peg) movement won't be valid.
+    ///@param targetCoord Any CoreCoord::Coord, but if it isn't 
+    ///representing a hole (PegType::Hole) and if isn't in a range of valid movements 
     ///of the sourceCoord the movement won't be valid.
     ///@returns true if the movement was performed, false otherwise.
-    ///@see Coord, PegType, Status, getStatus, getMovesForPeg, isValidMove.
-    bool makeMove(const Coord &sourceCoord, const Coord &targetCoord);
+    ///@see CoreCoord::Coord, PegType, Status, getStatus, getMovesForPeg, isValidMove.
+    bool makeMove(const CoreCoord::Coord &sourceCoord, 
+                  const CoreCoord::Coord &targetCoord);
 
     
     ///@brief Gets the current board representation.
@@ -86,10 +89,10 @@ public:
 
     ///@brief Get the type of the Peg at Coord. 
     ///If coord isn't valid returns Peg::Invalid.
-    ///@param Coord the coord of queried peg.
+    ///@param CoreCoord::Coord the coord of queried peg.
     ///@returns The type of peg. 
-    ///@see PegType, Coord.
-    PegType getPegAt(const Coord &coord) const;
+    ///@see PegType, CoreCoord::Coord.
+    PegType getPegAt(const CoreCoord::Coord &coord) const;
 
 
     ///@brief Gets the current status of the game.
@@ -107,39 +110,39 @@ public:
     int getMovesCount() const;
 
 
-    ///@brief Gets all the target coords that this peg
+    ///@brief Gets all the target CoreCoord::Coords that this peg
     ///can be placed. This is useful if you want to 
     ///highlight the possible destination of this peg.
-    ///If the coord doesn't represents a PegType::Peg
+    ///If the CoreCoord::Coord doesn't represents a PegType::Peg
     ///an empty vector will be returned.
-    ///@param The coord of Peg that will be queried.
-    ///@returns All target coords that the peg at coord
-    ///can be placed, or an empty vector if coord doesn't 
+    ///@param The CoreCoord::Coord of Peg that will be queried.
+    ///@returns All target coords that the peg at CoreCoord::Coord
+    ///can be placed, or an empty vector if CoreCoord::Coord doesn't 
     ///represents a peg (PegType::Peg).
     ///@see PegType, isValidCoord, makeMove
-    CoordVec getMovesForPeg(const Coord &coord) const;
+    CoreCoord::Coord::Vec getMovesForPeg(const CoreCoord::Coord &coord) const;
 
-    ///@brief Get all coords thats represents a Peg (PegType::Peg).
+    ///@brief Get all CoreCoord::Coords thats represents a Peg (PegType::Peg).
     ///@returns A coords vector with all Pegs coords.
     ///@see PegType
-    const CoordVec& getPegCoords() const;
+    const CoreCoord::Coord::Vec& getPegCoords() const;
 
     ///@brief Get all coords thats represents a Hole (PegType::Hole).
     ///@returns A coords vector with all Hole coords.
     ///@see PegType
-    const CoordVec& getHoleCoords() const;
+    const CoreCoord::Coord::Vec& getHoleCoords() const;
 
     ///@brief Get all coords thats represents a Blocked (PegType::Blocked).
     ///@returns A coords vector with all Blocked coords.
     ///@see PegType
-    const CoordVec& getBlockedCoords() const;
+    const CoreCoord::Coord::Vec& getBlockedCoords() const;
 
 
     ///@brief Check if a coord is valid i.e. is inside of Board bounds.
-    ///@param coord A Coord that will be queried.
+    ///@param coord A CoreCoord::Coord that will be queried.
     ///@returns True if coord is inside of Board bounds, false otherwise.
     ///@see Coord, Board.
-    bool isValidCoord(const Coord &coord) const;
+    bool isValidCoord(const CoreCoord::Coord &coord) const;
 
     ///@brief Check if the two coords can represent a valid move.
     ///@param sourceCoord Any coord, but if it isn't valid or isn't representing
@@ -149,7 +152,8 @@ public:
     ///targetCoord must be in range of the sourceCoord.
     ///@returns True is is valid movement, false otherwise.
     ///@see Coord, PegType, getMovesForPeg, isValidCoord.
-    bool isValidMove(const Coord &sourceCoord, const Coord &targetCoord) const;
+    bool isValidMove(const CoreCoord::Coord &sourceCoord, 
+                     const CoreCoord::Coord &targetCoord) const;
 
 
     ///@brief Turn the current board into a string representation.
@@ -159,7 +163,7 @@ public:
 
     // Private Methods //
 private:
-    void setPegAt(const Coord &coord, PegType type);
+    void setPegAt(const CoreCoord::Coord &coord, PegType type);
     void checkStatus();
 
     // iVars //
@@ -169,9 +173,9 @@ private:
 
     Board  m_board;
 
-    CoordVec m_pegCoords;
-    CoordVec m_holeCoords;
-    CoordVec m_blockedCoords;
+    CoreCoord::Coord::Vec m_pegCoords;
+    CoreCoord::Coord::Vec m_holeCoords;
+    CoreCoord::Coord::Vec m_blockedCoords;
 };
 
 NS_COREPEG_END

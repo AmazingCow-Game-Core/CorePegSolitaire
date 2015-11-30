@@ -51,5 +51,6 @@
 #include "CorePegSolitaire_Utils.h"
 #include "FileLevelLoader.h"
 #include "ILevelLoader.h"
+#include "GameCore.h"
 
 #endif // defined(__PegSolitaireCore_include_PegSolitaireCore_h__) //

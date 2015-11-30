@@ -64,18 +64,3 @@ std::ostream& operator <<(std::ostream &os, PegType type)
     return os;
 }
 NS_COREPEG_END
-
-// Friends //
-std::ostream& CorePeg::operator <<(std::ostream &os, const Coord &coord)
-{
-    os << "(" << coord.y << "," << coord.x << ")";
-    return os;
-}
-bool CorePeg::operator ==(const Coord &lhs, const Coord rhs)
-{
-    return (lhs.y == rhs.y) && (lhs.x == rhs.x);
-}
-bool CorePeg::operator !=(const Coord &lhs, const Coord rhs)
-{
-    return !(lhs == rhs);
-}

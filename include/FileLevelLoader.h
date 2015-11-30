@@ -48,6 +48,9 @@
 #include "CorePegSolitaire_Utils.h"
 #include "CorePegSolitaire_Types.h"
 #include "ILevelLoader.h"
+//CoreCoord
+#include "CoreCoord.h"
+
 
 NS_COREPEG_BEGIN
 
@@ -88,34 +91,35 @@ public:
     
 
     ///@brief Get all the coords that has a Peg (PegType::Peg) in this board.
-    ///@returns A Coord vector with all coords that are Pegs.
-    ///@see Coord.
-    ///@see CoordVec.
+    ///@returns A CoreCoord::Coord vector with all coords that are Pegs.
+    ///@see CoreCoord::Coord.
+    ///@see CoreCoord::Coord::Vec.
     ///@see PegType.
-    const CoordVec& getPegCoords() const override;
+    const CoreCoord::Coord::Vec& getPegCoords() const override;
 
     ///@brief Get all the coords that has a Hole (PegType::Hole) in this board.
-    ///@returns A Coord vector with all coords that are Holes.
-    ///@see Coord.
-    ///@see CoordVec.
+    ///@returns A CoreCoord::Coord vector with all coords that are Holes.
+    ///@see CoreCoord::Coord.
+    ///@see CoreCoord::Coord::Vec.
     ///@see PegType.
-    const CoordVec& getHoleCoords() const override;
+    const CoreCoord::Coord::Vec& getHoleCoords() const override;
 
     ///@brief Get all the coords that is blocked (PegType::Blocked) in this board.
-    ///@returns A Coord vector with all coords that are blocked.
-    ///@see Coord.
-    ///@see CoordVec.
+    ///@returns A CoreCoord::Coord vector with all coords that are blocked.
+    ///@see CoreCoord::Coord.
+    ///@see CoreCoord::Coord::Vec.
     ///@see PegType.
-    const CoordVec& getBlockedCoords() const override;
+    const CoreCoord::Coord::Vec& getBlockedCoords() const override;
 
     // iVars //
 private:
     std::string m_filename;
     
-    Board    m_board;    
-    CoordVec m_pegCoords;
-    CoordVec m_holeCoords;
-    CoordVec m_blockedCoords;
+    Board m_board;
+
+    CoreCoord::Coord::Vec m_pegCoords;
+    CoreCoord::Coord::Vec m_holeCoords;
+    CoreCoord::Coord::Vec m_blockedCoords;
 };
 
 NS_COREPEG_END

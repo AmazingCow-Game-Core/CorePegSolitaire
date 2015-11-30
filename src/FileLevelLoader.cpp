@@ -58,7 +58,7 @@ FileLevelLoader::FileLevelLoader(const std::string &filename) :
     m_filename(filename)
 {
     std::ifstream infile(m_filename.c_str());
-    Coord currCoord;
+    CoreCoord::Coord currCoord;
 
     for(std::string line; std::getline(infile, line); /*None*/ )
     {
@@ -113,15 +113,15 @@ int FileLevelLoader::getPegsCount() const
     return static_cast<int>(m_pegCoords.size());
 }
 
-const CoordVec& FileLevelLoader::getPegCoords() const
+const CoreCoord::Coord::Vec& FileLevelLoader::getPegCoords() const
 {
     return m_pegCoords;
 }
-const CoordVec& FileLevelLoader::getHoleCoords() const
+const CoreCoord::Coord::Vec& FileLevelLoader::getHoleCoords() const
 {
     return m_holeCoords;
 }
-const CoordVec& FileLevelLoader::getBlockedCoords() const
+const CoreCoord::Coord::Vec& FileLevelLoader::getBlockedCoords() const
 {
     return m_blockedCoords;
 }

@@ -4,7 +4,7 @@
 //             ██        ██                                                   //
 //            ███  █  █  ███                                                  //
 //            █ █        █ █        CorePegSolitaire_Types.h                  //
-//             ████████████         CorePegSolitaire                        //
+//             ████████████         CorePegSolitaire                          //
 //           █              █       Copyright (c) 2015 AmazingCow             //
 //          █     █    █     █      www.AmazingCow.com                        //
 //          █     █    █     █                                                //
@@ -45,7 +45,6 @@
 //std
 #include <vector>
 #include <ostream>
-
 //CorePegSolitaire
 #include "CorePegSolitaire_Utils.h"
 
