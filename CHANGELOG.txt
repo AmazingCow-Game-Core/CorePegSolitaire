@@ -1,0 +1,8 @@
+v0.1.0 - ????
+
+v0.2.0 - [Nov 30 2015]
+    - Change the name of project from PegSolitaireCore 
+      to CorePegSolitaire to follow the convetion of the other 
+      Amazing Cow games.
+    - Change the Coord to CoreCoord lib.
+    - Add the makefile and test_game.

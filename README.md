@@ -14,29 +14,20 @@ ones it is very cool.
 
 ## Files:
 We tried to separated the files in a very organized form.   
-Here is a list of them and it's intend.
 
-```PegSolitaireCore.h``` : The main header, is a umbrella header that includes all other stuff that is needed to use this Core.   
-While is possible to include each file separately, we find that is easier to just include this file.
-
-```PegSolitaireCore_Utils.h``` : This file will define some utilities used across the other files of this Core.   
-Now it just define a namespace macro that is used for this Core. (We learned this from cocos2d-x and liked a lot)
-
-```PegSolitaireCore_Types.h``` : This define some constants, enum, typedef and types that this Core uses.   
-All types that is used in more than one place is, or defined here, or included here.   
-So all Core can include this file and serve itself from all types.
-
-```ILevelLoader.h``` : A pure virtual class that defines a API to load the board that will used in GameCore.
-
-```FileLevelLoader.h``` : A concrete subclass of ILevelLoader that let us load a game board from a disk file.
-
-```GameCore.h``` : The game itself. 
+* ```CorePegSolitaire.h```
+* ```CorePegSolitaire_Types.h```
+* ```CorePegSolitaire_Utils.h```
+* ```FileLevelLoader.h```
+* ```GameCore.h```
+* ```ILevelLoader.h```
 
 ## More info:
-We tried to document the Core extensively, so we think that is pretty ease to get what the Core is doing,
-the API calls and stuff.   
-Anyway if you didn't understand something let us know sending a mail to ***help_opensource@amazingcow.com*** 
-with the subject filled with the name of this repo.
+We tried to document the Core extensively, so we think that is pretty ease to 
+get what the Core is doing, the API calls and stuff.   
+Anyway if you didn't understand something let us know sending a mail 
+to ***help_opensource@amazingcow.com***  with the subject filled with 
+the name of this repo.
 
 
 ## License:
