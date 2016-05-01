@@ -64,35 +64,40 @@ public:
 
     // Public Methods //
 public:
-    ///@brief All subclasses must override this and return 
-    ///the complete board representation.
+    ///@brief
+    ///     All subclasses must override this and return
+    ///     the complete board representation.
     ///@returns The board loaded.
     ///@see Board.
     virtual const Board& getBoard() const = 0;
-    
-    ///@brief All subclasses must override this and return 
-    ///how many pegs the board has.
+
+    ///@brief
+    ///     All subclasses must override this and return
+    ///     how many pegs the board has.
     ///@returns How many pegs the board loaded has.
     virtual int getPegsCount() const = 0;
 
-    
-    ///@brief All subclasses must override this and return 
-    ///all coords that represents a Peg (PegType::Peg).
+
+    ///@brief
+    ///     All subclasses must override this and return
+    ///     all coords that represents a Peg (PegType::Peg).
     ///@returns The coords vector with all coords that are Pegs.
     ///@see CoreCoord::Coord, CoreCoord::Coord::Vec, PegType.
     virtual const CoreCoord::Coord::Vec& getPegCoords() const = 0;
 
-    ///@brief All subclasses must override this and return 
-    ///all coords that represents a Hole (PegType::Hole).
+    ///@brief
+    ///     All subclasses must override this and return
+    ///     all coords that represents a Hole (PegType::Hole).
     ///@returns The coords vector with all coords that are Holes.
     ///@see CoreCoord::Coord, CoreCoord::Coord::Vec, PegType.
     virtual const CoreCoord::Coord::Vec& getHoleCoords() const = 0;
 
-    ///@brief All subclasses must override this and return 
-    ///all coords that represents a Blocked (PegType::Blocked).
+    ///@brief
+    ///     All subclasses must override this and return
+    ///     all coords that represents a Blocked (PegType::Blocked).
     ///@returns The coords vector with all coords that are Blocked.
     ///@see CoreCoord::Coord, CoreCoord::Coord::Vec, PegType.
-    virtual const CoreCoord::Coord::Vec& getBlockedCoords() const = 0;    
+    virtual const CoreCoord::Coord::Vec& getBlockedCoords() const = 0;
 };
 
 NS_COREPEG_END
