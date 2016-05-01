@@ -63,8 +63,8 @@ bin:
 
 	g++ -std=c++11                                        \
 	     -D__AMAZINGCORE_COREPEGSOLITAIRE_TEST_ENABLED__  \
-	     -I./lib/CoreCoord/include  			          \
-	     ./lib/CoreCoord/src/*.cpp  			          \
-	     ./src/*.cpp 				  			          \
-	     ./test_game/main.cpp 	  			              \
+	     -I./lib/CoreCoord/include                        \
+	     ./lib/CoreCoord/src/*.cpp                        \
+	     ./src/*.cpp                                      \
+	     ./test_game/main.cpp                             \
 	     -o ./bin/testgame
