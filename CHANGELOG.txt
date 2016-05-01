@@ -1,13 +1,87 @@
-v0.1.0 - ????
+--------------------------------------------------------------------------------
+| Version 0.3.x                                                                |
+--------------------------------------------------------------------------------
+v0.3.0 - [May 1, 2016] - Senna we miss you :`(
+-- General --
+    - Better error checking:
+      FileLevelLoader now throws an exception if it
+      cannot load the the level file.
+    - Improve documentation.
+    - New README.
+    - Add doxygen stuff.
+    - [CoreCoord] Add the CoreCoord lib submodule.
 
+-- Source --
+    include/CorePegSolitarire_Types.h
+        - Sort the includes.
+        - Improve documentation.
+
+    include/CorePegSolitaire_Utils.h
+        - Update version numbers.
+
+    include/FileLevelLoader.h
+        - Improve documentation.
+
+    include/GameCore.h
+        - Improve documentation.
+
+    include/ILevelLoader.h
+        - Improve documentation.
+
+    src/FileLevelLoader.cpp
+        - Better error checking:
+          FileLevelLoader now throws an exception if it
+          cannot load the the level file.
+        - Cosmectic changes.
+
+    src/GameCore.cpp
+        - Cosmetic changes.
+        - Add comments.
+
+    Makefile
+        - Cosmetic changes.
+        - Change the compiler for obj.
+
+    test_game/main.cpp
+        - Implement the test game.
+
+-- Info Files --
+    README.md
+        - Rewrite the README to consistency with other
+          Amazing Cow's READMEs.
+
+    CHANGELOG.txt
+        - Split the CHANGELOG entry in sections.
+        - Sort the CHANGELOG entries, now the newer version are on top.
+
+    mainpage.dox
+        - Add the mainpage doxygen documentation.
+
+-- Others --
+    CoreCoord
+        - Add the CoreCoord lib submodule.
+    Doxyfile
+        - Add the doxygen configuration.
+
+
+--------------------------------------------------------------------------------
+| Version 0.2.x                                                                |
+--------------------------------------------------------------------------------
+v0.2.1 - [Jan 20 2016]
+    - Update the license headers.
+    - Fix the name of CorePegSolitaire_Types.cpp
+
+--------------------------------------------------------------------------------
 v0.2.0 - [Nov 30 2015]
-    - Change the name of project from PegSolitaireCore 
-      to CorePegSolitaire to follow the convetion of the other 
+    - Change the name of project from PegSolitaireCore
+      to CorePegSolitaire to follow the convetion of the other
       Amazing Cow games.
     - Change the Coord to CoreCoord lib.
     - Add the makefile and test_game.
 
-v0.2.1 - [Jan 20 2016]
- 	- Update the license headers.
- 	- Fix the name of CorePegSolitaire_Types.cpp
- 	
+
+
+--------------------------------------------------------------------------------
+| Version 0.2.x                                                                |
+--------------------------------------------------------------------------------
+v0.1.0 - ????
