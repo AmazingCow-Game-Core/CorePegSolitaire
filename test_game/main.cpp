@@ -46,10 +46,14 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
+
 #include "../include/CorePegSolitaire.h"
+#include "CoreCoord.h"
+
 
 USING_NS_COREPEG;
 using namespace std;
+
 
 void usage()
 {
@@ -66,11 +70,41 @@ int main(int argc, const char *argv[])
     if(argc != 2)
         usage();
 
-    // COWTODO: Implement the game.
     FileLevelLoader loader(argv[1]);
     GameCore core(loader);
 
-    cout << core.ascii() << endl;
+    while(core.getStatus() == Status::Continue)
+    {
+        //Display board info.
+        cout << core.ascii() << endl;
+        cout << "Status     : " << core.getStatus    () << endl;
+        cout << "PegsCount  : " << core.getPegsCount () << endl;
+        cout << "MovesCount : " << core.getMovesCount() << endl;
+
+        CoreCoord::Coord source;
+        CoreCoord::Coord target(-1, -1);
+
+        cout << "Source coord : ";
+        cin >> source.y >> source.x;
+
+        char c;
+        cout << "Move type [u]p [d]down [l]eft [r]ight : ";
+        cin >> c;
+
+        if(c == 'u') target = source.getUp   (2);
+        if(c == 'd') target = source.getDown (2);
+        if(c == 'l') target = source.getLeft (2);
+        if(c == 'r') target = source.getRight(2);
+
+        if(target.x == -1 && target.y == -1)
+        {
+            cout << "invalid move!" << endl;
+            continue;
+        }
+
+        core.makeMove(source, target);
+    }
+
 }
 
 #endif // __AMAZINGCORE_COREPEGSOLITAIRE_TEST_ENABLED__ //
