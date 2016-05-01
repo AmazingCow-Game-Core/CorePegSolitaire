@@ -49,6 +49,7 @@
 //Usings
 USING_NS_COREPEG;
 
+
 // CTOR/DTOR //
 GameCore::GameCore(const ILevelLoader &loader) :
     m_movesCount   (0),
@@ -58,12 +59,12 @@ GameCore::GameCore(const ILevelLoader &loader) :
     m_holeCoords   (loader.getHoleCoords   ()),
     m_blockedCoords(loader.getBlockedCoords())
 {
-
+    //Empty...
 }
 
 
 // Public Methods //
-bool GameCore::makeMove(const CoreCoord::Coord &sourceCoord, 
+bool GameCore::makeMove(const CoreCoord::Coord &sourceCoord,
                         const CoreCoord::Coord &targetCoord)
 {
     //Users of this class is who should call this, but any way...
@@ -78,19 +79,18 @@ bool GameCore::makeMove(const CoreCoord::Coord &sourceCoord,
 
     //Update the coords vectors.
     //First update the Pegs Coords Vector.
-    m_pegCoords.erase(std::find(std::begin(m_pegCoords), 
                                 std::end(m_pegCoords),
                                 sourceCoord));
 
-    m_pegCoords.erase(std::find(std::begin(m_pegCoords), 
+    m_pegCoords.erase(std::find(std::begin(m_pegCoords),
                                 std::end(m_pegCoords),
                                 middleCoord));
 
     m_pegCoords.push_back(targetCoord);
-    
+
     //Next update the Holes Coords Vector.
-    m_holeCoords.erase(std::find(std::begin(m_holeCoords), 
-                                 std::end  (m_holeCoords), 
+    m_holeCoords.erase(std::find(std::begin(m_holeCoords),
+                                 std::end  (m_holeCoords),
                                  targetCoord));
 
     m_holeCoords.push_back(sourceCoord);
@@ -159,9 +159,9 @@ CoreCoord::Coord::Vec GameCore::getMovesForPeg(const CoreCoord::Coord &coord) co
     //Chapter 8, pag 105 for more :)
 #define __CHECK_MOVE__(_dir_)                              \
     if(getPegAt(coord##_dir_) == PegType::Peg &&           \
-    getPegAt(coord##_dir_.get##_dir_()) == PegType::Hole) \
+    getPegAt(coord##_dir_.get##_dir_()) == PegType::Hole)  \
 {                                                          \
-    possibleMoves.push_back(coord##_dir_.get##_dir_());   \
+    possibleMoves.push_back(coord##_dir_.get##_dir_());    \
 }
 
     __CHECK_MOVE__(Up);
