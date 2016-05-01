@@ -44,20 +44,31 @@
 
 //std
 #include <fstream>
+#include <system_error>
 
 //Usings
 USING_NS_COREPEG;
+
 
 // Constants/Enums/Typedefs //
 const char FileLevelLoader::kCharPeg     = 'o';
 const char FileLevelLoader::kCharHole    = '.';
 const char FileLevelLoader::kCharBlocked = 'x';
 
+
 // CTOR/DTOR //
 FileLevelLoader::FileLevelLoader(const std::string &filename) :
     m_filename(filename)
 {
     std::ifstream infile(m_filename.c_str());
+
+    //Check file existence.
+    if(!infile)
+    {
+        auto errcode = std::make_error_code(std::errc::no_such_file_or_directory);
+        throw std::system_error(errcode, filename);
+    }
+
     CoreCoord::Coord currCoord;
 
     for(std::string line; std::getline(infile, line); /*None*/ )
