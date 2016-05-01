@@ -79,6 +79,7 @@ bool GameCore::makeMove(const CoreCoord::Coord &sourceCoord,
 
     //Update the coords vectors.
     //First update the Pegs Coords Vector.
+    m_pegCoords.erase(std::find(std::begin(m_pegCoords),
                                 std::end(m_pegCoords),
                                 sourceCoord));
 
