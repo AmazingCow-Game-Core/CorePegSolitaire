@@ -1,70 +1,108 @@
-Core Peg Solitaire
-====
-Made with <3 by [Amazing Cow](http://www.amazingcow.com).
+# CorePegSolitaire
 
-## Intro:
-This is a Game Core for Peg Solitaire Game.   
-You can use it as a "lib" for making Peg Solitaire Game in C++ concentrating 
+**Made with <3 by [Amazing Cow](http://www.amazingcow.com).**
+
+
+
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
+
+## Websites:
+
+* [CorePegSolitaire Website](http://opensource.amazingcow.com/gamecore/corepegsolitaire/)
+* [Game Core Website](http://opensource.amazingcow.com/gamecore/) - 
+The Amazing Cow's Game Cores site.
+
+
+
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
+
+## Description:
+
+This is a Game Core for PegSolitaire Game.   
+
+### Motivation:
+
+You can use it as a "lib" for making PegSolitaire Game in C++ concentrating 
 your efforts in making a cool game interface and letting the logic of the 
 game alone.
 
-This is not a complete implementation, but instead is very naive one. 
-The core doesn't support triangular boards and so on, but with the regular
-ones it is very cool.
+<br>
+
+As usual, you are **very welcomed** to **share** and **hack** it.
 
 
+
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
+
+## Examples:
+
+Check out the ```./test_game/main.cpp``` to a peek of how use this lib.
+
+
+
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
+
+## Documentation:
+
+We strive to make our source code fully documented.   
+While there are a myriad of comments, one might find useful take a look at:
+
+* [Project Website](http://opensource.amazingcow.com/gamecore/corepegsolitaire/).
+* [Doxygen Docs](http://opensource.amazingcow.com/gamecore/corepegsolitaire/doxygen/).
+* [A list of blog posts about the project](http://opensource.amazingcow.com/gamecore/corepegsolitaire/posts/).
+
+Anyway if you didn't understand something let us know sending a mail to  
+[help_opensource@amazingcow.com]() with the subject filled with the
+name of this repo.
+
+
+
+<!-- ####################################################################### -->
 <!-- ####################################################################### -->
 
 ## Dependencies:
 
-This core needs to use the [CoreCoord](http://www.github.com/amazingcow/CoreCoord) 
-lib. The core itself ```#include``` the ```CoreCoord``` without any hardcoded paths
-so you must ensure that you point to the correct include dir in your compiler settings.   
-This is usually done in g++/clang++ like:
+This project uses:
 
-```bash
-$ g++ -I/path/to/CoreCoord/ ...
-```
-
-You can find a example in the ```Makefile```.
+* AmazingCow's [CoreCoord](http://www.github.com/AmazingCow-Game-Core/CoreCoord) lib.
 
 
 <!-- ####################################################################### -->
-
-## Files:
-We tried to separated the files in a very organized form.   
-
-* ```CorePegSolitaire.h```
-* ```CorePegSolitaire_Types.h```
-* ```CorePegSolitaire_Utils.h```
-* ```FileLevelLoader.h```
-* ```GameCore.h```
-* ```ILevelLoader.h```
-
-
-<!-- ####################################################################### -->
-
-## More info:
-We tried to document the Core extensively, so we think that is pretty ease to 
-get what the Core is doing, the API calls and stuff.   
-Anyway if you didn't understand something let us know sending a mail 
-to ***help_opensource@amazingcow.com***  with the subject filled with 
-the name of this repo.
-
-
 <!-- ####################################################################### -->
 
 ## License:
+
 This software is released under GPLv3.
 
 
+
+<!-- ####################################################################### -->
 <!-- ####################################################################### -->
 
 ## TODO:
-Check the TODO file.
+
+Check the TODO file for general things.
+
+This projects uses the COWTODO tags.   
+So install [cowtodo](http://www.github.com/AmazingCow-Tools/COWTODO) and run:
+
+``` bash
+$ cd path/to/the/project
+$ cowtodo 
+```
+
+That's gonna give you all things to do :D.
+
 
 
 <!-- ####################################################################### -->
+<!-- ####################################################################### -->
 
 ## Others:
-Check our repos and take a look at our [open source site](http://opensource.amazingcow.com).
+
+Check our repos and take a look at our 
+[open source site](http://opensource.amazingcow.com).
