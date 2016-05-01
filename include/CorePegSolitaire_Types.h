@@ -42,8 +42,8 @@
 #define __CorePegSolitaire_include_CorePegSolitaire_Types_h__
 
 //std
-#include <vector>
 #include <ostream>
+#include <vector>
 //CorePegSolitaire
 #include "CorePegSolitaire_Utils.h"
 
@@ -53,10 +53,12 @@ NS_COREPEG_BEGIN
 
 ///@brief Defines the possible states of Game Core.
 ///@see GameCore.
-enum class Status 
+enum class Status
 {
-    Victory, ///< Game is over - Player won, i.e. has only one peg remaining.
-    Defeat,  ///< Game is over - Player lose i.e. no valid moves, more than one peg.
+    Victory, ///< Game is over - Player won
+             ///  i.e. has only one peg remaining.
+    Defeat,  ///< Game is over - Player lose
+             ///  i.e. no valid moves, more than one peg.
     Continue ///< Game is not over - Keep playing...
 };
 
@@ -69,14 +71,14 @@ std::ostream& operator <<(std::ostream &os, Status status);
 enum class PegType
 {
     Peg,     ///< An actual peg.
-    Hole,    ///< A place that peg can be placed 
+    Hole,    ///< A place that peg can be placed
     Blocked, ///< This is not a type per se, but used due our limitation
-             ///of the board being in matrix form. So if we want a board
-             ///in a "T" or "Cross" shape we must fill the gaps with this
-             ///type. 
+             ///  of the board being in matrix form. So if we want a board
+             ///  in a "T" or "Cross" shape we must fill the gaps with this
+             ///  type.
     Invalid  ///< This is not a type per se, but used to indicate that coord
-             ///doesn't represents any other Peg Type in case of user pass
-             ///a invalid coord to GameCore.
+             ///  doesn't represents any other Peg Type in case of user pass
+             ///  a invalid coord to GameCore.
 };
 
 ///@brief Output the name of PegType. (ex: PegType::Peg)
