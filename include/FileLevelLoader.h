@@ -57,18 +57,33 @@ class FileLevelLoader : public ILevelLoader
 {
     // Contants/Enums/Typedefs //
 public:
+    ///@brief The char that represents the PegType::Peg.
+    ///@note To this class loads the board correctly the file MUST
+    ///      represents the peg with this char.
+    ///@see PegType.
     static const char kCharPeg;
+    ///@brief The char that represents the PegType::Hole.
+    ///@note To this class loads the board correctly the file MUST
+    ///      represents the hole with this char.
+    ///@see PegType.
     static const char kCharHole;
-    static const char kCharBlocked;    
+    ///@brief The char that represents the PegType::Blocked.
+    ///@note To this class loads the board correctly the file MUST
+    ///      represents the hole with this char.
+    ///@see PegType.
+    static const char kCharBlocked;
+
 
     // CTOR/DTOR //
 public:
-    ///@brief Loads a board from a disk file.
-    ///Using the FileLevelLoader::kCharPeg,
-    ///FileLevelLoader::kCharHole and 
-    ///FileLevelLoader::kCharPeg as the chars that
-    ///represents the Board elements.
-    ///@param filename The fullpath of the Board file.
+    ///@brief Loads the Board from file located in filename.
+    ///@param
+    ///     filename The fullpath of the Board file.
+    ///@throws
+    ///     std::system_error exception if it cannot open a
+    ///     file with the given filename.
+    ///@see
+    ///     kCharPeg, kCharHole, kCharBlocked, PegType.
     FileLevelLoader(const std::string &filename);
 
     ///@brief A virtual Destructor.
@@ -81,39 +96,34 @@ public:
     //@returns The loaded Board.
     //@see Board.
     const Board& getBoard() const override;
-    
+
 
     ///@brief Gets how many Pegs (PegType::Peg) this board has.
     ///@returns The pegs count.
     ///@see PegType.
     int getPegsCount() const override;
-    
+
 
     ///@brief Get all the coords that has a Peg (PegType::Peg) in this board.
     ///@returns A CoreCoord::Coord vector with all coords that are Pegs.
-    ///@see CoreCoord::Coord.
-    ///@see CoreCoord::Coord::Vec.
-    ///@see PegType.
+    ///@see CoreCoord::Coord, CoreCoord::Coord::Vec, PegType.
     const CoreCoord::Coord::Vec& getPegCoords() const override;
 
     ///@brief Get all the coords that has a Hole (PegType::Hole) in this board.
     ///@returns A CoreCoord::Coord vector with all coords that are Holes.
-    ///@see CoreCoord::Coord.
-    ///@see CoreCoord::Coord::Vec.
-    ///@see PegType.
+    ///@see CoreCoord::Coord, CoreCoord::Coord::Vec, PegType.
     const CoreCoord::Coord::Vec& getHoleCoords() const override;
 
     ///@brief Get all the coords that is blocked (PegType::Blocked) in this board.
     ///@returns A CoreCoord::Coord vector with all coords that are blocked.
-    ///@see CoreCoord::Coord.
-    ///@see CoreCoord::Coord::Vec.
-    ///@see PegType.
+    ///@see CoreCoord::Coord, CoreCoord::Coord::Vec, PegType.
     const CoreCoord::Coord::Vec& getBlockedCoords() const override;
+
 
     // iVars //
 private:
     std::string m_filename;
-    
+
     Board m_board;
 
     CoreCoord::Coord::Vec m_pegCoords;
