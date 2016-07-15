@@ -53,8 +53,11 @@
 //The core version number.
 #define COW_COREPEG_VERSION_MAJOR    "0"
 #define COW_COREPEG_VERSION_MINOR    "3"
-#define COW_COREPEG_VERSION_REVISION "0"
+#define COW_COREPEG_VERSION_REVISION "1"
 
-#define COW_COREPEG_VERSION "0.3.0"
+#define COW_COREPEG_VERSION       \
+    COW_COREPEG_VERSION_MAJOR "." \
+    COW_COREPEG_VERSION_MINOR "." \
+    COW_COREPEG_VERSION_REVISION
 
 #endif // defined(__CorePegSolitaire_include_CorePegSolitaire_Utils_h__) //

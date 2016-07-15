@@ -1,6 +1,14 @@
 --------------------------------------------------------------------------------
 | Version 0.3.x                                                                |
 --------------------------------------------------------------------------------
+v0.3.1 - [Jul 15, 2016]
+-- General --
+    - Update the mainpage.dox and README.md to
+      use the correct amazing cow links.
+    - Start using the update_version script.
+
+--------------------------------------------------------------------------------
+
 v0.3.0 - [May 1, 2016] - Senna we miss you :`(
 -- General --
     - Better error checking:
